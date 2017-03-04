@@ -25,10 +25,10 @@ pip install -r requirements.txt
 
 Application runs in dry model by default, see documentation below to enable
 
-Usage available via python trello-cleaner.py --help
+Usage available via python trello_cleaner.py --help
 
 ```
-resistance-calendar-etl $> python trello-cleaner.py --help
+resistance-calendar-etl $> python trello_cleaner.py --help
 usage: trello-cleaner.py [-h] --boards BOARDS [BOARDS ...] [--dry_run DRY_RUN]
 
 Resistance Calendar Trello ETL
@@ -46,7 +46,7 @@ optional arguments:
 
 Whitelisting skips other boards
 ```
-resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)'
+resistance-calendar-etl $> python trello_cleaner.py --boards '*Tutorial Board (Start Here!)'
 Investigating Board "*Tutorial Board (Start Here!)"
 0 out of 6 cards are named "NEW EVENT"
 [dry_run] Investigating Board "Example Board"
@@ -55,7 +55,7 @@ Investigating Board "*Tutorial Board (Start Here!)"
 
 Turning off dry_run
 ```
-resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)' --dry_run=False
+resistance-calendar-etl $> python trello_cleaner.py --boards '*Tutorial Board (Start Here!)' --dry_run=False
 username: XXXXXXX with 2 board(s) found
 Investigating Board "*Tutorial Board (Start Here!)"
 Skipping non-whitelisted board "*Tutorial Board (Start Here!)"
