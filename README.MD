@@ -36,28 +36,31 @@ Resistance Calendar Trello ETL
 optional arguments:
   -h, --help            show this help message and exit
   --boards BOARDS [BOARDS ...]
-  --dry_run DRY_RUN
+                        board names, using single quotes 'My Board'. Multiple
+                        can be defined 'Board a' 'Board b'
+  --dry_run DRY_RUN     when false, logs changes it would make but does not
+                        alter data
 ```
 
 ## Examples
 
 Whitelisting skips other boards
 ```
-resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)' --dry_run
+resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)'
 Investigating Board "*Tutorial Board (Start Here!)"
 0 out of 6 cards are named "NEW EVENT"
-Investigating Board "Example Board"
-Skipping non-whitelisted board "Example Board"
+[dry_run] Investigating Board "Example Board"
+[dry_run] Skipping non-whitelisted board "Example Board"
 ```
 
 Turning off dry_run
 ```
-resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)' --dry_run
+resistance-calendar-etl $> python trello-cleaner.py --boards '*Tutorial Board (Start Here!)' --dry_run=False
 username: XXXXXXX with 2 board(s) found
 Investigating Board "*Tutorial Board (Start Here!)"
 Skipping non-whitelisted board "*Tutorial Board (Start Here!)"
 Investigating Board "Example Board"
-1 out of 1 cards are named "NEW EVENT"
+300 out of 2034 cards are named "NEW EVENT"
 converting name NEW EVENT to Some event
 labeling with: FACEBOOK
 ```
